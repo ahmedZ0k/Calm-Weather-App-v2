@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logo.jpg" type="image/icon" />
+    <title>The Weather</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=League+Spartan:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/navbar.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+          <img class="logo" src="images/logo.png" alt="logo">
+          <div class="links">
+              <span class="icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </span>
+              <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./calm.html">Weather</a></li>
+                  <li><a href="./mainNews.html">Main News</a></li>
+                  <li><a href="./news.html">News</a></li>
+                  <li><a href="./counter.html">COP 28</a></li>
+                  <li><a href="./weatherSolution.html">Suggest Solution</a></li>
+                  <li><a href="./log.html">Login</a></li>
+              </ul>
+          </div>
+      </div>
+    <div class="main">
+      <div class="cop_logo">
+        <img src="images/copLogo.png" alt="" width="700px" />
+      </div>
+      <div id="time">
+        <div class="circle" style="--cir: yellow">
+          <div class="dots" id="day_dot"></div>
+
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="dd"></circle>
+          </svg>
+          <div class="days"></div>
+        </div>
+        <div class="circle" style="--cir: yellow">
+          <div class="dots" id="hr_dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="hh"></circle>
+          </svg>
+          <div class="hours"></div>
+        </div>
+        <div class="circle" style="--cir: yellow">
+          <div class="dots" id="min_dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="mm"></circle>
+          </svg>
+          <div class="minutes"></div>
+        </div>
+        <div class="circle" style="--cir: yellow">
+          <div class="dots" id="sec_dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="ss"></circle>
+          </svg>
+          <div class="seconds"></div>
+        </div>
+        <!-- <div class="ap">
+                <div id="ampm">AM</div>
+            </div> -->
+      </div>
+    </div>
+    <div class="cop_info">
+      <section class="cards">
+        <div class="card" id="card1">
+          <p>
+            The 2023 UN Climate Change Conference will convene from 30 November
+            to 12 December 2023 in Dubai, United Arab Emirates (UAE). It will
+            comprise: the 28th meeting of the Conference of the Parties (COP
+            28); the fifth meeting of the COP serving as the Meeting of the
+            Parties to the Paris Agreement (CMA 5); the 18th meeting of the COP
+            serving as the Meeting of the Parties to the Kyoto Protocol (CMP
+            18); the 59th meeting of the Subsidiary Body for Implementation (SBI
+            59); and the 59th meeting of the Subsidiary Body for Scientific and
+            Technological Advice (SBSTA 59).
+          </p>
+        </div>
+        <div class="card" id="card2">
+          <p>
+            In a letter dated 13 January 2023, the UNFCCC Secretariat announced
+            that Sultan Ahmed Al Jaber, Minister of Industry and Advanced
+            Technology and UAE Special Envoy for Climate Change, has been
+            appointed to serve as COP 28 President-Designate. The COP 27
+            Egyptian Presidency and the Incoming COP 28 Presidency are convening
+            informal consultations to engage governments at the ministerial,
+            Head-of-Delegation, and technical levels to lay the groundwork “to
+            deliver a successful COP 28 that drives global transformation
+            towards a low-emission and climate-resilient world, fosters
+            ambitious climate action and facilitates implementation,
+          </p>
+        </div>
+        <div class="card" id="card3">
+          <p>
+            including the related support”.The first Global Stocktake of the
+            implementation of the Paris Agreement will conclude at COP 28. Each
+            stocktake is a two-year process that happens every five years, with
+            the aim of assessing the world’s collective progress towards
+            achieving its climate goals. The first Global Stocktake takes place
+            at the mid-point in the implementation of the 2030 Agenda for
+            Sustainable Development and its SDGs, including Goal 13 (climate
+            action).
+          </p>
+        </div>
+      </section>
+      <div class="contact">
+        <form class="my_form">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" required  />
+          </div>
+          <div>
+            <label for="mail">Email</label>
+            <input type="email" id="mail" required />
+          </div>
+          <div>
+            <label for="num">Phone</label>
+            <input type="text" id="num" required maxlength="11" />
+          </div>
+          <div>
+            <label for="ques">Question</label>
+            <input
+              type="text"
+              id="ques"
+              required
+              placeholder="enter your question ?"
+            />
+          </div>
+          <div class="send">
+            <input type="submit" value="submit" style="cursor: pointer;"/>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/stopWatch.js"></script>
+  </body>
+</html>

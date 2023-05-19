@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: #06312f;    
+}
+
+.day {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: bold;
+}
+.weather{
+    
+    background: #ffffff7c;
+    border-radius: 5px; 
+    width: 30%;
+    color: rgb(255, 255, 255);
+}
+.card{
+    background: #ffffff43;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+i{
+    color: #fff;
+}
+a {
+    color: #fff;
+}
+.city{
+    font-size: 200%;
+}
+

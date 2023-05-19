@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>Calm</title>
+  </head>
+  
+  <body class="container" style="background-color: rgba(25,51,48,255);">
+   
+    <img src="./images/1682460750278.png" alt="logo">
+    <form id="loginForm" class="p-2 w-50" style="background-color: white;">
+      <h2>Sign in</h2>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="name@example.com"
+          required
+        />
+        <label for="email">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <label for="password">Password</label>
+      </div>
+      <div class="w-100 text-start m-2 wrong d-none">Incorrect Email Or Password</div>
+      <div class="w-100 text-start m-2"><a href="/forgetPassword.html">Forget Password?</a></div>
+      <button class="btn btn-success my-2 w-100" id="loginButton">Login</button>
+      <div class="line-container">
+        <div class="line"></div>
+        <div class="or">Or</div>
+        <div class="line"></div>
+      </div>
+      <button class="btn btn-success my-2 w-100" id="signUp">Sign Up</button>
+    </form>
+    <script type="module" src="./js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif; 
+}
+body{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: rgba(25,51,48,255);
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+.cop_logo {
+    width: 50%;
+    padding-right: 15px;
+
+}
+#time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    background-color: rgba(25,51,48,255);
+}
+#time .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#time .circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+}
+#time .circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: #191919;
+    stroke-width: 4;
+    transform: translate(5px , 5px);
+    -webkit-transform: translate(5px , 5px);
+    -moz-transform: translate(5px , 5px);
+    -ms-transform: translate(5px , 5px);
+    -o-transform: translate(5px , 5px);
+}
+#time .circle svg circle:nth-child(2){
+    stroke: var(--cir);
+    stroke-dasharray: 440;
+}
+#time div{
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+#time div span{
+    position: absolute;
+    transform: translateX(-50%) translateY(-1px);
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    -webkit-transform: translateX(-50%) translateY(-1px);
+    -moz-transform: translateX(-50%) translateY(-1px);
+    -ms-transform: translateX(-50%) translateY(-1px);
+    -o-transform: translateX(-50%) translateY(-1px);
+}
+/* #time .ap{
+    position: relative;
+    font-size: 1em;
+    transform: translateX(-10px);
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+} */
+.dots{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+
+}
+.dots::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--cir);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 0 0 20px var(--cir), 
+    0 0 60px var(--cir);
+}
+
+
+.cop_info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+.contact {
+    width: 100%;
+}
+.contact .my_form{
+    padding: 20px;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    color:#ccc;
+    line-height: 1.7;
+    align-items: center;
+    text-align: center;
+    
+}
+.contact .my_form input{
+    color: black;
+    padding: 15px;
+    margin: 10px 5px;
+    border-radius: 45%;
+}
+.contact .my_form label{
+    color: white;
+}
+.cop_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info p{
+    color: white;
+    line-height: 1.5em;
+}
+.card{
+    width: 350px;
+    height: 200px;
+    background-color: var(--Very-Dark-Magenta);
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+#card1{
+    margin-right: 25px;
+    overflow: scroll;
+}
+#card2{
+    margin-right: 25px;
+    margin-top: 25px;
+    overflow: scroll;
+}
+#card3{
+    margin-right: 25px;
+    margin-top: 50px;
+    overflow: scroll;
+}

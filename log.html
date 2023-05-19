@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+  <style>
+  @keyframes sunrise {
+  from {
+    transform: rotate(-45deg);
+  }
+
+  to {
+    transform: rotate(315deg);
+  }
+}
+
+@keyframes moonrise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes dawn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes noon {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes dusk {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes midnight {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+body {
+  --animation-speed: 24s;
+  background-color: rgb(37, 29, 24);
+  font-family: 'Cairo', sans-serif;
+}
+
+body.pause {
+  --animation-speed: 0;
+}
+
+.sky {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.sky__phase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+
+.sky__dawn {
+  background: linear-gradient(
+    0deg,
+    rgba(254, 215, 102, 1) 0%,
+    rgba(205, 237, 246, 1) 100%
+  );
+  animation: linear dawn infinite var(--animation-speed);
+}
+
+.sky__noon {
+  background: linear-gradient(
+    0deg,
+    rgba(205, 237, 246, 1) 0%,
+    rgba(36, 123, 160, 1) 100%
+  );
+  animation: linear noon infinite var(--animation-speed);
+}
+
+.sky__dusk {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 32, 110, 1) 0%,
+    rgba(10, 0, 94, 1) 100%
+  );
+  animation: linear dusk infinite var(--animation-speed);
+}
+
+.sky__midnight {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 20, 1) 0%,
+    rgba(10, 0, 94, 1) 100%
+  );
+  animation: linear midnight infinite var(--animation-speed);
+}
+
+.orbit {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 200px auto;
+  transform: rotate(-45deg);
+  animation: linear sunrise infinite var(--animation-speed);
+}
+
+@media (min-width: 768px) {
+  .sky {
+    max-height: 100%;
+
+  }
+  .orbit {
+    width: 700px;
+    height: 700px;
+    margin: 150px auto;
+    
+  }
+}
+
+@media (min-width: 940px) {
+  .orbit {
+    width: 800px;
+    height: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    --animation-speed: 28s;
+  }
+  .orbit {
+    width: 1000px;
+    height: 1000px;
+    margin: 200px auto;
+  }
+}
+
+@media (min-width: 1500px) {
+  body {
+    --animation-speed: 30s;
+  }
+  .orbit {
+    width: 1300px;
+    height: 1300px;
+  }
+}
+
+.sun {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(254, 215, 102);
+  border-radius: 50%;
+  box-shadow: 0 0 14px 14px rgba(254, 215, 102, 0.2);
+}
+
+.moon {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.2);
+}
+
+#sky__stars > div {
+  width: 3px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#toggle-animation {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  text-transform: uppercase;
+  background-color: rgb(2, 0, 20);
+  color: #fff;
+  border: 0;
+  padding: 0.5em 1em;
+  letter-spacing: 0.5px;
+}
+
+#toggle-animation:hover {
+  background-color: rgb(61, 0, 21);
+  cursor: pointer;
+}
+
+.paused {
+  display: none;
+}
+
+.pause .paused {
+  display: block;
+}
+
+.pause .playing {
+  display: none;
+}
+.container{
+  z-index: 1;
+   background: #ffffff7f;
+   border-radius: 8px;
+   width: 30%;
+   margin-top: 5%;
+}
+button{
+  background: #195b8b;
+  margin-left: 43%;
+}
+.input-group-text{
+  background: transparent;
+  border: none;
+}
+a i{
+  font-size: 200%;
+  
+}
+  </style>
+  <title>Calm</title>
+</head>
+<body>
+  <div class="sky" style="z-index: -1; height: 100%;">
+  <div class="sky__phase sky__dawn"></div>
+  <div class="sky__phase sky__noon"></div>
+  <div class="sky__phase sky__dusk"></div>
+  <div class="sky__phase sky__midnight">
+    <div id="sky__stars">
+      
+    </div>
+  </div>
+  <div class="orbit">
+    <div class="sun"></div>
+    <div class="moon"></div>
+  </div>
+</div>
+
+<div class="container form-group" >
+  <img src="images/1682460750278.png" alt="" style="margin-left: 35%;" width="30%">
+  <h2 class="text-center">Login</h2>
+  <form action="" id="loginForm">
+    <div class="form-group input-group" style="width: 50%; margin-left: 20%; border-radius: 20px;">
+      <div class="input-group-prepend w-20%">
+        <label for="useremil" class="input-group-text"><i class="fa-solid fa-user"></i></label>
+      </div>
+      <input type="email" name="" id="useremil" class="form-control " >
+    </div>
+    <div class="form-group input-group" style="width: 50%; margin-left: 20%;">
+      <div class="input-group-prepend">
+        <label for="userpassword" class="input-group-text"><i class="fa-solid fa-lock" > </i></label>
+      </div>
+      <input type="password" name="" id="userpassword" class="form-control " >
+    </div>
+    <button class="btn btn-bg-info text-light w-10 log-btn mb-4"  id="loginButton">LOGIN</button>
+
+  </form>
+  <div class="text-center mb-4 row">
+    <div class="text-center mb-3 col-12">Login By</div>
+    <a href="http://" class="text-light col-4"><i class="fa-brands fa-facebook" ></i></a>
+    <a href="http://" class="text-light col-4"><i class="fa-brands fa-google"></i></a>
+    <a href="http://" class="text-light col-4"><i class="fa-brands fa-apple"></i></a>
+    </div>
+    <div class="text-center">
+    <a href="./signUp.html" >Sign Up</a>
+  </div>
+</div>
+<script src="./js/popper.min.js"></script>
+<script type="module" src="./js/login.js"></script>
+</body>
+</html>

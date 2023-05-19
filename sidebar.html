@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="./css/navbar.css">
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header class="head">
+        <div class="image-text">
+          <span class="image">
+            <img src="images/logo.png" alt="" />
+          </span>
+          <div class="text logo-text">
+            <span class="side-name">Calm</span>
+            <span class="title">Weather Web</span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-left toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="side-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+
+            <li class="side-link">
+              <a href="./calm.html">
+                <i class="bx bxl-tailwind-css icon"></i>
+                <span class="text nav-text">Weather</span>
+              </a>
+            </li>
+
+            <li class="side-link">
+              <a href="./news.html">
+                <i class="bx bx-news icon"></i>
+                <span class="text nav-text">News</span>
+              </a>
+            </li>
+
+            <li class="side-link">
+              <a href="./weatherSolution.html">
+                <i class="bx bx-edit-alt icon"></i>
+                <span class="text nav-text">Suggest Solution</span>
+              </a>
+            </li>
+
+            <li class="side-link">
+              <a href="./about.html">
+                <i class="bx bx-copy-alt icon"></i>
+                <span class="text nav-text">about</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="./login.html">
+              <i class="bx bx-log-in icon"></i>
+              <span class="text nav-text">Login</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = document.querySelector("nav"),
+        toggle = document.querySelector(".toggle"),
+        leftToggle = document.querySelector(".bx-chevron-left");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      leftToggle.onclick = () => {
+        if (sidebar.classList.contains("close"))
+          leftToggle.classList.replace("bx-chevron-right", "bx-chevron-left");
+        else
+          leftToggle.classList.replace("bx-chevron-left", "bx-chevron-right");
+      };
+    </script>
+  </body>
+</html>
